@@ -12,6 +12,8 @@ jobs:
   typecheck:
     name: 型チェック
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: チェックアウト
@@ -37,6 +39,8 @@ jobs:
   dry-run:
     name: ドライラン
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: チェックアウト

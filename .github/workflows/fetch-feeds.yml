@@ -20,6 +20,8 @@ on:
 jobs:
   fetch-feeds:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # プッシュするために書き込み権限が必要
     
     steps:
       - name: チェックアウト

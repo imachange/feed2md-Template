@@ -163,7 +163,7 @@ output_filename: "{uid}.md"
 - `{uid}` - 一意のID（16進数9桁）
 - `{guid}` - 記事のGUID/ID
 
-#### 日付（moment.js記法対応）
+#### 日付（Day.js記法対応）
 - `{date}` - デフォルト: YYYY-MM-DD
 - `{date:YYYYMMDD}` - 20260218
 - `{date:YYYY-MM-DD}` - 2026-02-18
