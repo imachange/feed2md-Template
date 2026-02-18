@@ -1,0 +1,78 @@
+---
+name: バグ報告
+description: バグや問題を報告する
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグ報告ありがとうございます。以下の情報を記入してください。
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: バグの説明
+      description: バグの内容を詳しく説明してください
+      placeholder: 何が起きましたか？
+    validations:
+      required: true
+  
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 再現手順
+      description: バグを再現する手順を教えてください
+      placeholder: |
+        1. '...'に移動
+        2. '...'をクリック
+        3. '...'まで下にスクロール
+        4. エラーを確認
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される動作
+      description: どのような動作を期待していましたか？
+    validations:
+      required: true
+  
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+      description: 実際にはどうなりましたか？
+    validations:
+      required: true
+  
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログやエラーメッセージ
+      description: 関連するログやエラーメッセージがあれば貼り付けてください
+      render: shell
+  
+  - type: textarea
+    id: config
+    attributes:
+      label: フィード設定
+      description: 問題が発生したフィード設定ファイルの内容（必要に応じて）
+      render: yaml
+  
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境情報
+      description: 実行環境について教えてください
+      placeholder: |
+        - OS: [例: macOS 14.0]
+        - Node.js バージョン: [例: 20.11.0]
+        - pnpm バージョン: [例: 8.15.1]
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: 追加情報
+      description: その他、関連する情報があれば記入してください

@@ -1,0 +1,99 @@
+---
+name: フィード追加依頼
+description: 新しいフィードの追加を依頼する
+title: "[Feed] "
+labels: ["feed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        フィード追加依頼ありがとうございます。以下の情報を記入してください。
+  
+  - type: input
+    id: site_name
+    attributes:
+      label: サイト名
+      description: 追加したいサイトの名前
+      placeholder: "Example Blog"
+    validations:
+      required: true
+  
+  - type: input
+    id: feed_url
+    attributes:
+      label: フィードURL
+      description: RSS/Atom/JSON FeedのURL
+      placeholder: "https://example.com/feed.xml"
+    validations:
+      required: true
+  
+  - type: input
+    id: site_url
+    attributes:
+      label: サイトURL
+      description: サイトのトップページURL
+      placeholder: "https://example.com"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: feed_type
+    attributes:
+      label: フィードの種類
+      description: フィードの形式を選択してください
+      options:
+        - RSS 2.0
+        - RSS 1.0
+        - Atom 1.0
+        - JSON Feed
+        - 不明
+    validations:
+      required: true
+  
+  - type: input
+    id: category
+    attributes:
+      label: カテゴリ
+      description: このフィードのカテゴリ（任意）
+      placeholder: "tech, blog, news など"
+  
+  - type: textarea
+    id: tags
+    attributes:
+      label: タグ
+      description: このフィードに付けたいタグ（1行に1つ）
+      placeholder: |
+        技術
+        プログラミング
+        Web開発
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: 説明
+      description: このサイトやフィードについての説明
+      placeholder: このサイトは〜について発信しています
+  
+  - type: textarea
+    id: config
+    attributes:
+      label: 提案するフィード設定
+      description: 追加したいフィード設定（任意）
+      render: yaml
+      placeholder: |
+        ---
+        title: "Example Blog"
+        feed: "https://example.com/feed.xml"
+        type: "feed"
+        domain: "example.com"
+        category: "tech"
+        tags:
+          - 技術
+          - プログラミング
+        ---
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: 追加情報
+      description: その他、関連する情報があれば記入してください
