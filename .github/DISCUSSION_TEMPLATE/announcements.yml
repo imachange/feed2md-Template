@@ -1,0 +1,8 @@
+labels: [announcement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## お知らせ
+        
+        プロジェクトに関する重要なお知らせや更新情報を共有する場です。

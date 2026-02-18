@@ -1,0 +1,57 @@
+name: フィード取得
+
+on:
+  # 6時間ごとに実行
+  schedule:
+    - cron: '0 */6 * * *'
+  
+  # 手動実行を許可
+  workflow_dispatch:
+  
+  # プッシュ時にも実行（テスト用）
+  push:
+    branches:
+      - main
+    paths:
+      - 'feed/**/*.md'
+      - 'src/**'
+      - 'templates/**'
+
+jobs:
+  fetch-feeds:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # プッシュするために書き込み権限が必要
+    
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+      
+      - name: pnpmのセットアップ
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - name: 依存関係のインストール
+        run: pnpm install --frozen-lockfile
+      
+      - name: フィードの取得と変換
+        run: pnpm run fetch
+      
+      - name: 変更のコミットとプッシュ
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add feed/
+          if git diff --staged --quiet; then
+            echo "変更はありません"
+          else
+            git commit -m "🔄自動更新: フィード取得 $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+          fi

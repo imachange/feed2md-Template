@@ -1,0 +1,38 @@
+{
+  "name": "feed-to-markdown",
+  "version": "1.0.0",
+  "description": "RSS/Atom/JSON FeedをMarkdownファイルに変換するGitHub Action",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "fetch": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [
+    "rss",
+    "atom",
+    "feed",
+    "markdown",
+    "github-actions"
+  ],
+  "author": "ʕ•ᴥ•ʔ閑関",
+  "license": "MIT",
+  "dependencies": {
+    "rss-parser": "^3.13.0",
+    "gray-matter": "^4.0.3",
+    "dayjs": "^1.11.10",
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.1"
+}
