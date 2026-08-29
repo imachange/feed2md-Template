@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   dayjs:
-    specifier: ^1.11.10
-    version: 1.11.19
+    specifier: ^1.11.20
+    version: 1.11.20
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
   handlebars:
-    specifier: ^4.7.8
-    version: 4.7.8
+    specifier: ^4.7.9
+    version: 4.7.9
   rss-parser:
     specifier: ^3.13.0
     version: 3.13.0
@@ -277,8 +277,8 @@ packages:
       sprintf-js: 1.0.3
     dev: false
 
-  /dayjs@1.11.19:
-    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
+  /dayjs@1.11.20:
+    resolution: {integrity: sha512-YbwwqR/uYpeoP4pu043q+LTDLFBLApUP6VxRihdfNTqu4ubqMlGDLd6ErXhEgsyvY0K6nCs7nggYumAN+9uEuQ==}
     dev: false
 
   /entities@2.2.0:
@@ -356,8 +356,8 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /handlebars@4.7.8:
-    resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
+  /handlebars@4.7.9:
+    resolution: {integrity: sha512-4E71E0rpOaQuJR2A3xDZ+GM1HyWYv1clR58tC8emQNeQe3RH7MAzSbat+V0wG78LQBo6m6bzSG/L4pBuCsgnUQ==}
     engines: {node: '>=0.4.7'}
     hasBin: true
     dependencies:
